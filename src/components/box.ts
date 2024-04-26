@@ -8,19 +8,19 @@ const initial = `
     box-sizing: border-box;
   }
 `;
-const padding = {
+const padding: Rule = {
   property: "padding",
   token: "spacing",
   values: sizes,
 };
 
-const paddingInline = {
+const paddingInline: Rule = {
   property: "padding-inline",
   token: "spacing",
   values: sizes,
 };
 
-const paddingBlock = {
+const paddingBlock: Rule = {
   property: "padding-block",
   token: "spacing",
   values: sizes,
@@ -33,20 +33,20 @@ const borderRadius: Rule = {
   property: "radius",
 };
 
-const background = {
+const background: Rule = {
   property: "background",
   token: "background-color",
   values: ["success", "warning", "danger", "info", "subtle"],
 };
 
-const border = {
+const border: Rule = {
   property: "border",
   rule: "border",
   token: "border",
   values: ["success", "warning", "danger", "info", "subtle"],
 };
 
-const shadow = {
+const shadow: Rule = {
   property: "shadow",
   rule: "box-shadow",
   token: "shadow",
