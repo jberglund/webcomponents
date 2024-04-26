@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "ok-box",
+      "description": "Here is a description of my web component.\n\nSlots:\n\n  * ` ` {} - This is an unnamed slot (the default slot)\n\nAttributes:\n\n  * `border` {success|warning|danger|info|subtle} - The border color.\n\n  * `background` {success|warning|danger|info|subtle} - The background color.\n\n  * `display` {flex|flex-inline|block|inline} - The background color.\n\n  * `radius` {xs|s|m|pill|circle} - The border-radius of the box.\n\n  * `shadow` {xs|s|m|l|xl} - The shadow of the box.\n\n  * `padding` {xs|s|m|l|xl} - \n\n  * `padding-inline` {xs|s|m|l|xl} - \n\nProperties:\n\n  * `root` {`ShadowRoot`} - ",
+      "attributes": [
+        {
+          "name": "border",
+          "description": "`border` {success|warning|danger|info|subtle} - The border color.\n\n",
+          "values": [
+            {
+              "name": "success"
+            },
+            {
+              "name": "warning"
+            },
+            {
+              "name": "danger"
+            },
+            {
+              "name": "info"
+            },
+            {
+              "name": "subtle"
+            }
+          ]
+        },
+        {
+          "name": "background",
+          "description": "`background` {success|warning|danger|info|subtle} - The background color.\n\n",
+          "values": [
+            {
+              "name": "success"
+            },
+            {
+              "name": "warning"
+            },
+            {
+              "name": "danger"
+            },
+            {
+              "name": "info"
+            },
+            {
+              "name": "subtle"
+            }
+          ]
+        },
+        {
+          "name": "display",
+          "description": "`display` {flex|flex-inline|block|inline} - The background color.\n\n",
+          "values": [
+            {
+              "name": "flex"
+            },
+            {
+              "name": "flex-inline"
+            },
+            {
+              "name": "block"
+            },
+            {
+              "name": "inline"
+            }
+          ]
+        },
+        {
+          "name": "radius",
+          "description": "`radius` {xs|s|m|pill|circle} - The border-radius of the box.\n\n",
+          "values": [
+            {
+              "name": "xs"
+            },
+            {
+              "name": "s"
+            },
+            {
+              "name": "m"
+            },
+            {
+              "name": "pill"
+            },
+            {
+              "name": "circle"
+            }
+          ]
+        },
+        {
+          "name": "shadow",
+          "description": "`shadow` {xs|s|m|l|xl} - The shadow of the box.\n\n",
+          "values": [
+            {
+              "name": "xs"
+            },
+            {
+              "name": "s"
+            },
+            {
+              "name": "m"
+            },
+            {
+              "name": "l"
+            },
+            {
+              "name": "xl"
+            }
+          ]
+        },
+        {
+          "name": "padding",
+          "description": "`padding` {xs|s|m|l|xl} - \n\n",
+          "values": [
+            {
+              "name": "xs"
+            },
+            {
+              "name": "s"
+            },
+            {
+              "name": "m"
+            },
+            {
+              "name": "l"
+            },
+            {
+              "name": "xl"
+            }
+          ]
+        },
+        {
+          "name": "padding-inline",
+          "description": "`padding-inline` {xs|s|m|l|xl} - \n\n",
+          "values": [
+            {
+              "name": "xs"
+            },
+            {
+              "name": "s"
+            },
+            {
+              "name": "m"
+            },
+            {
+              "name": "l"
+            },
+            {
+              "name": "xl"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

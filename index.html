@@ -1,30 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app" style="display: grid; gap: 20px">
-      <cool-box padding="xl" border="subtle">
-        <a href="/">Omg</a>
-      </cool-box>
-      <cool-box to-slotted padding="xl" border="subtle" >
-        <div>OMgwtfbbbedfse
-          <div>Nested twice</div>
-        </div>
-      </cool-box>
-      <cool-box to-slotted padding="xl" border="subtle">
-        <a href="/">Omg</a>
-        <div slot="boop">heeey</div>
-      </cool-box>
-      <current-date></current-date>
+    <div>
+      <ok-stack gap="xl">
+        <ok-box padding="xl" border="success" background="success" radius="s">
+          The web component (aka. :host) has padding
+        </ok-box>
+
+        <ok-box padding="xl" border="danger" to-slotted>
+          <div>Now the ::slotted() element does instead</div>
+        </ok-box>
+
+        <ok-box padding="xl" border="success" background="success" radius="s">
+          <a style="display: block" href="#"
+            >This is important because now you can use and style native HTML
+            elements instead of reimplementing them in a web component</a
+          >
+        </ok-box>
+
+        <ok-box padding="xl">
+          <ok-stack gap="m" to-slotted>
+            <ok-box
+              padding="m"
+              display="block"
+              radius="s"
+              shadow="m"
+              border="subtle"
+              to-slotted
+            >
+              <a href="#">
+                <ok-stack horizontal justify="space-between">
+                  <div>Compare focus</div>
+                  <ok-box>15,44 kr</ok-box>
+                </ok-stack>
+              </a>
+              <a href="#"
+                >Compare focus from the previous element to this one
+              </a>
+              <a href="#"
+                >Compare focus from the previous element to this one
+              </a>
+            </ok-box>
+          </ok-stack>
+        </ok-box>
+      </ok-stack>
     </div>
-    
 
     <script type="module" src="/src/components/current-date.ts"></script>
     <script type="module" src="/src/components/box.ts"></script>
+    <script type="module" src="/src/components/stack.ts"></script>
   </body>
 </html>
