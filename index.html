@@ -7,8 +7,210 @@
     <title>Vite + TS</title>
   </head>
   <body>
+    <!-- <ok-dialog>
+      <ok-stack gap="m">
+        <div>hej</div>
+        <ok-dialog-close
+          ><div>
+            <button>butt</button>
+            Close
+          </div></ok-dialog-close
+        >
+      </ok-stack>
+    </ok-dialog> -->
+
+    <dialog id="dialog">
+      <form>
+        <ok-stack gap="l" to-slotted>
+          <reveal-element2>
+            <ok-stack gap="xs">
+              <label> Some input fields </label>
+              <input type="text" />
+            </ok-stack>
+            <ok-stack gap="xs">
+              <label> Some input fields </label>
+              <input type="text" />
+            </ok-stack>
+            <ok-stack gap="xs">
+              <label> Some input fields </label>
+              <input type="text" />
+            </ok-stack>
+            <ok-stack gap="xs" horizontal>
+              <ok-dialog-close><button>Close</button></ok-dialog-close>
+
+              <button type="submit" value="confirm">Confirm</button>
+            </ok-stack>
+          </reveal-element2>
+        </ok-stack>
+      </form>
+    </dialog>
     <div>
-      <ok-stack gap="xl">
+      <ok-box padding="xl">
+        <ok-stack gapX="m" gapY="xs" to-slotted>
+          <button onclick="dialog.showModal()">Open dialog</button>
+          <reveal-element2>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background-color: transparent;
+                overflow: clip;
+              "
+            >
+              Element reveal
+            </div>
+          </reveal-element2>
+        </ok-stack>
+      </ok-box>
+      <ok-stack>
+        <reveal-element>
+          <div
+            style="padding: 1rem; background-color: transparent; overflow: clip"
+          >
+            Element reveal
+          </div>
+          <div
+            style="padding: 1rem; background-color: transparent; overflow: clip"
+          >
+            Element reveal
+          </div>
+          <div
+            style="padding: 1rem; background-color: transparent; overflow: clip"
+          >
+            Element reveal
+          </div>
+          <div
+            style="padding: 1rem; background-color: transparent; overflow: clip"
+          >
+            Element reveal
+          </div>
+          <div
+            style="padding: 1rem; background-color: transparent; overflow: clip"
+          >
+            Element reveal
+          </div>
+          <div
+            style="padding: 1rem; background-color: transparent; overflow: clip"
+          >
+            Element reveal
+          </div>
+        </reveal-element>
         <ok-box padding="xl" border="success" background="success" radius="s">
           The web component (aka. :host) has padding
         </ok-box>
@@ -54,5 +256,8 @@
 
     <script type="module" src="/src/components/box.ts"></script>
     <script type="module" src="/src/components/stack.ts"></script>
+    <!-- <script type="module" src="/src/components/animate-vanilla.ts"></script> -->
+    <script type="module" src="/src/components/animate-motion.ts"></script>
+    <script type="module" src="/src/components/dialog.ts"></script>
   </body>
 </html>

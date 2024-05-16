@@ -13,8 +13,8 @@ const initial = `
   display: flex;
 }
 
-:host([horizontal]),
-:host([horizontal='center'] ){
+:host([horizontal][to-slotted]) ::slotted(*),
+:host([horizontal]:not([to-slotted])) {
   flex-direction: row;
   align-items: center;
 }
@@ -40,6 +40,10 @@ const initial = `
   justify-content: space-between;
 }
 `;
+
+/* const horizontal: Rule = {
+
+} */
 
 const gap = {
   property: "gap",

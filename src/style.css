@@ -51,6 +51,7 @@
 }
 html {
   font-family: system-ui;
+  font-size: 1.2rem;
 }
 a {
   display: block;
@@ -67,4 +68,33 @@ a {
 body {
   padding: 1rem;
   margin: 0;
+}
+
+label {
+  font-size: 0.8rem;
+}
+input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 200px;
+  font: inherit;
+}
+button {
+  font: inherit;
+}
+
+dialog {
+  max-inline-size: min(90vw, var(--size-content-3, 400px));
+  max-block-size: min(80vh, 100%);
+  max-block-size: min(80dvb, 100%);
+  overflow: hidden;
+}
+
+dialog > form {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  max-block-size: 80vh;
+  max-block-size: 80dvb;
 }
