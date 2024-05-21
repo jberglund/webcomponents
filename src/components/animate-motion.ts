@@ -9,8 +9,6 @@
 
 import { animate, stagger, spring, type AnimationControls } from "motion";
 
-const SCALE_UP = [];
-
 class RevealElement2 extends HTMLElement {
   private animations: AnimationControls[] = [];
   private root: ShadowRoot;

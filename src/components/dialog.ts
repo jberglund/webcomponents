@@ -57,7 +57,7 @@ class CloseDialog extends HTMLElement {
     event.preventDefault();
     try {
       // this will either call the method we defined in ok-dialog OR the native dialog method
-
+      //@ts-expect-error
       this.closest("ok-dialog, dialog")!.close();
     } catch (e) {
       console.warn("No dialog found to close", e);
