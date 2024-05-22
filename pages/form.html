@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/style.css" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <loader-loader>
+      <main>
+        <form>
+          <ok-stack gap="l" to-slotted>
+            <reveal-element2>
+              <ok-stack gap="xs">
+                <label> Some input fields </label>
+                <input type="text" />
+              </ok-stack>
+              <ok-stack gap="xs">
+                <label> Some input fields </label>
+                <input type="text" />
+              </ok-stack>
+              <ok-stack gap="xs">
+                <label> Some input fields </label>
+                <input type="text" />
+              </ok-stack>
+              <ok-stack gap="xs" horizontal>
+                <ok-dialog-close><button>Close</button></ok-dialog-close>
+
+                <button type="submit" value="confirm">Confirm</button>
+              </ok-stack>
+            </reveal-element2>
+          </ok-stack>
+        </form>
+      </main>
+    </loader-loader>
+    <script type="module" src="/src/components/box.ts"></script>
+    <script type="module" src="/src/components/stack.ts"></script>
+    <!-- <script type="module" src="/src/components/animate-vanilla.ts"></script> -->
+    <script type="module" src="/src/components/animate-motion.ts"></script>
+    <script type="module" src="/src/components/dialog.ts"></script>
+  </body>
+</html>

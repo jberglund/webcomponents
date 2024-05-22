@@ -1,7 +1,7 @@
-const parseStringToHTML = (htmlString: string) =>
+const parseStringToHTML = (htmlString: string, selector = "main") =>
   new DOMParser()
     .parseFromString(htmlString, "text/html")
-    .querySelector("main")!;
+    .querySelector(selector)!;
 
 /*
  * 1. Look for anchor tags in the slotted content
@@ -23,7 +23,6 @@ class LoaderLoader extends HTMLElement {
     this.slotted.querySelectorAll("a[ll-follow]").forEach((a) => {
       a.addEventListener("click", (event) => {
         event.preventDefault();
-
         this.fetchPage(a.getAttribute("href")!);
       });
     });
@@ -32,13 +31,14 @@ class LoaderLoader extends HTMLElement {
   private async fetchPage(url: string) {
     const response = await fetch(url);
     const text = await response.text();
-    //history.pushState(text, "", url);
-    //console.log(history.state);
+    history.pushState(text, "", url);
+
     await this.insertPage(text);
   }
+
   private async insertPage(html: string) {
     const newDOM = parseStringToHTML(html);
-    this.root.replaceChildren(newDOM);
+    this.slotted.replaceChildren(newDOM);
     this.bindLinks();
   }
 
