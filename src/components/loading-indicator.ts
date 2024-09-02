@@ -1,27 +1,46 @@
 class LoadingComponent extends HTMLElement {
-    static get observedAttributes() {
-      return ['loading'];
+  private _loading = false;
+
+  set loading(state: boolean) {
+    this._loading = state;
+    this.setAttribute('loading', `${state}`);
+  }
+
+  get loading(){
+    return this._loading;
+  }
+
+  static get observedAttributes() {
+    return ["loading"];
+  }
+
+  attributeChangedCallback(name: string, _: string, newValue: string) {
+    if(name === 'loading'){
+      this._loading = newValue === 'true' ? true : false;
     }
-  
-    connectedCallback() {
-      this.attachShadow({ mode: 'open' }).innerHTML = `
+  }
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" }).innerHTML = `
       <style>
         :host{
-          display: inline-grid;
           font-size: inherit;
+          display: inline-grid;
           place-items: center;
-          --offset-when-hidden: -100%;
+          --offset-when-hidden: 200%;
         }
   
         .indicator, .text {
           grid-column: 1;
           grid-row: 1;
-          transition: transform 300ms ease, opacity 300ms ease;
+          transition: transform 500ms cubic-bezier(0, 0, 0, 1.03), opacity 700ms ease;
         }
 
         .indicator {
           transform: translateY(var(--offset-when-hidden));
           opacity: 0;
+          transition-delay: 100ms;
         }
   
         .text {
@@ -29,18 +48,19 @@ class LoadingComponent extends HTMLElement {
           opacity: 1;
         }
   
-        :host([loading]) .indicator {
+        :host([loading="true"]) .indicator {
           transform: translateY(0);
           opacity: 1;
         }
         
-        :host([loading]) .text{
+        :host([loading="true"]) .text{
           transform: translateY(calc(var(--offset-when-hidden) * -1));
           opacity: 0;
         }
   
         .ok-spinner {
-          --ok-spinner-width: 2px;
+          --ok-spinner-width: 0.2em;
+          --ok-spinner-color: white;
           position: relative;
           place-content: center;
         }
@@ -48,11 +68,10 @@ class LoadingComponent extends HTMLElement {
         .ok-spinner:after {
           width: calc(1em - var(--ok-spinner-width));
           height: calc(1em - var(--ok-spinner-width));
-          border: var(--ok-spinner-width) solid var(--ok-spinner-color, currentColor);
-          animation: ok-spinner 1s linear infinite;
-          border-color: var(--ok-spinner-background);
+          border: var(--ok-spinner-width) solid oklch(from var(--ok-spinner-color) l c h / 0.5);
+          border-top: var(--ok-spinner-width) solid var(--ok-spinner-color);
+          animation: ok-spinner 800ms linear infinite;
           border-radius: 50%;
-          border-top: var(--ok-spinner-width) solid transparent;
           content: '';
           display: block;
         }
@@ -80,10 +99,10 @@ class LoadingComponent extends HTMLElement {
         <span class="text">
           <slot></slot>
         </span>
-
     `;
-    }
   }
-  
-  customElements.define('loading-indicator', LoadingComponent);
-  
+}
+
+export type {LoadingComponent};
+
+customElements.define("loading-indicator", LoadingComponent);

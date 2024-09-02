@@ -22,7 +22,7 @@
     </button>
 
     <button class="button" style="max-width: 150px">
-        <loading-indicator>
+        <loading-indicator loading="true">
         Text over two lines button
         </loading-indicator>
     </button>
@@ -58,13 +58,20 @@
     </button>
 </div>
     <script>
-        Array.from(document.querySelectorAll('button')).forEach( button => {
+			Array.from(document.querySelectorAll('button')).forEach( button => {
             button.addEventListener('click', () => {
                 const togglee = button.querySelector('loading-indicator');
                 if(togglee){
-                    togglee.toggleAttribute('loading');
+										console.log(togglee)
+										togglee.loading = true;
+
+										setTimeout(() => {
+											togglee.loading = false;
+                		}, 2000)
                 }
             })
+
+           
         })
     </script>
     <script type="module" src="/src/components/loading-indicator.ts"></script>
