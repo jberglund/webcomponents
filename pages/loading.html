@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Loading toggles</title>
+
+    <script type="module">
+        import '../src/style.css';
+    </script>
+
+  </head>
+  <body>
+    <div>
+    <div style="display: flex; align-items: center;">
+    
+    <button class="button" style="min-width: 100px">
+        <loading-indicator>
+        Click me
+        </loading-indicator>
+    </button>
+
+    <button class="button" style="max-width: 150px">
+        <loading-indicator>
+        Text over two lines button
+        </loading-indicator>
+    </button>
+
+    <button>
+        <loading-indicator>
+        Unstyled button
+        </loading-indicator>
+    </button>
+
+    <button>
+       Vanilla button
+    </button>
+    <button class="button">
+        No spinner button
+     </button>
+</div>
+    <button class="button">
+        <loading-indicator>
+        Click
+            <div slot="indicator" class="loading-indicator">
+                Clicked
+            </div>
+        </loading-indicator>
+    </button>
+
+    <button class="button">
+        No loader
+    </button>
+
+    <button>
+        Unstyled no loader
+    </button>
+</div>
+    <script>
+        Array.from(document.querySelectorAll('button')).forEach( button => {
+            button.addEventListener('click', () => {
+                const togglee = button.querySelector('loading-indicator');
+                if(togglee){
+                    togglee.toggleAttribute('loading');
+                }
+            })
+        })
+    </script>
+    <script type="module" src="/src/components/loading-indicator.ts"></script>
+  </body>
+</html>

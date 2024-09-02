@@ -98,3 +98,35 @@ dialog > form {
   max-block-size: 80vh;
   max-block-size: 80dvb;
 }
+
+:where(button){
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background: none;
+  transform: translateZ(0);
+  overflow: clip;
+}
+
+.button{
+  overflow: clip;
+  display: inline-flex;
+
+  border-radius: 6px;
+  color: white;
+  background: black;
+  font-weight: 500;
+  padding: 0 0.8em;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  transition-property: border-color, background, color, transform, box-shadow;
+  transition-duration: .15s;
+  transition-timing-function: ease;
+  font-size: 0.8rem;
+  line-height: 1;
+  height: 2rem;
+  max-height: 2rem;
+}
