@@ -28,7 +28,7 @@ class LoadingComponent extends HTMLElement {
           font-size: inherit;
           display: inline-grid;
           place-items: center;
-          --offset-when-hidden: 200%;
+          --offset-when-hidden: 2em;
         }
   
         .indicator, .text {
@@ -99,6 +99,7 @@ class LoadingComponent extends HTMLElement {
         <span class="text">
           <slot></slot>
         </span>
+
     `;
   }
 }
